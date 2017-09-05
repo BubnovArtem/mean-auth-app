@@ -1,0 +1,19 @@
+{
+  "name": "ldap-server",
+  "version": "1.0.0",
+  "description": "LDAP server for MEAN Auth App",
+  "main": "ldap-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ldap-server"
+  },
+  "author": "Artem Bubnov",
+  "license": "ISC",
+  "dependencies": {
+    "ldapjs": "*",
+    "fs": "*",
+    "child_process": "*"
+  },
+  "devDependencies": {
+  }
+}

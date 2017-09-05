@@ -1,0 +1,30 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "watch": false,
+        // types option has been previously configured
+        "types": [
+            // add node as an option
+            "node"
+         ],
+         // typeRoots option has been previously configured
+         "typeRoots": [
+            // add path to @types
+            "node_modules/@types"
+         ]
+    },
+    "exclude": [
+        "node_modules",
+        "angular-src",
+        "ldap-server/node_modules",
+        "chat-server/node_modules",
+        "public",
+        "bower_components",
+        "jspm_packages",
+        "tmp",
+        "temp"
+    ]
+}
