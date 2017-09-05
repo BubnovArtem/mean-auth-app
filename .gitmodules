@@ -1,3 +1,3 @@
 [submodule "mean-auth-app-ng4"]
-	path = mean-auth-app-ng4
+	path = angular-src
 	url = https://github.com/BubnovArtem/mean-auth-app-ng4.git
