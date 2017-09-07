@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-export const config = require('../config/database');
 
 // Task Schema
 const TaskSchema = mongoose.Schema({

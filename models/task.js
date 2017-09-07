@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require('mongoose');
-exports.config = require('../config/database');
 // Task Schema
 var TaskSchema = mongoose.Schema({
     userId: {

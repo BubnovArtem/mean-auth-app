@@ -10,21 +10,17 @@ var mongoose = require('mongoose');
 var config = require('./config/database');
 // Connect to DB
 mongoose.Promise = global.Promise;
-mongoose.connect(config.database, { useMongoClient: true });
-// On connection
-mongoose.connection.on('connected', function () {
-    console.log('Connected to database ' + config.database);
-});
-// On error
-mongoose.connection.on('error', function (err) {
-    console.log('Database error: ' + err);
-});
+mongoose.connect(config.database, { useMongoClient: true })
+    .then(function () { return console.log('Connected to database ' + config.database); })
+    .catch(function (err) { return console.log('Database error: ' + err); });
 // Use Express
 var app = exports.express();
 // Require Users Routes Module
 var users = require('./routes/users');
 // Require Tasks Routes Module
 var tasks = require('./routes/tasks');
+// Require Chat Routes Module
+var chat = require('./routes/chat');
 // Port number
 var port = 3000;
 // CORS Middleware
@@ -41,6 +37,8 @@ require('./config/passport')(passport);
 app.use('/users', users);
 // Planing Routes
 app.use('/tasks', tasks);
+// Chat Routes
+app.use('/chat', chat);
 // Index Route
 app.get('/', function (req, res) {
     res.send('Invalid Endpoint');

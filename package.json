@@ -4,22 +4,33 @@
   "description": "MEAN Auth app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
     "start": "nodemon app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "socket.io-client": "^2.0.3",
+    "socketio": "^1.0.0"
   },
   "author": "Artem Bubnov",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^8.0.25"
+    "@types/node": "^8.0.25",
+    "jasmine": "^2.8.0",
+    "typescript": "*",
+    "@types/jasmine": "^2.5.47",
+    "mock-spawn": "^0.2.6",
+    "supertest": "^3.0.0",
+    "@types/supertest": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "tslint": "^5.1.0",
+    "log4js": "*"
   }
 }

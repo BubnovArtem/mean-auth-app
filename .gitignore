@@ -2,9 +2,11 @@
 
 # dependencies
 /node_modules
-/angular-src/node_modules
 /chat-server/node_modules
 /ldap-server/node_modules
+
+# subprojects
+/angular-src
 
 # IDE - VSCode
 .vscode/*

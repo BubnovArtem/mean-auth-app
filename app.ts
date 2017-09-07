@@ -10,17 +10,10 @@ const config = require('./config/database');
 
 // Connect to DB
 mongoose.Promise = global.Promise;
-mongoose.connect(config.database, {useMongoClient: true});
-
-// On connection
-mongoose.connection.on('connected', () => {
-    console.log('Connected to database ' + config.database);
-});
-
-// On error
-mongoose.connection.on('error', (err) => {
-    console.log('Database error: ' + err);
-});
+mongoose.connect(config.database, {useMongoClient: true})
+    .then(() =>  console.log('Connected to database ' + config.database))
+    .catch((err) => console.log('Database error: ' + err)
+);
 
 // Use Express
 const app: any = express();
@@ -29,6 +22,8 @@ const app: any = express();
 const users = require('./routes/users');
 // Require Tasks Routes Module
 const tasks = require('./routes/tasks');
+// Require Chat Routes Module
+const chat = require('./routes/chat');
 
 // Port number
 const port: number = 3000;
@@ -52,6 +47,8 @@ require('./config/passport')(passport);
 app.use('/users', users);
 // Planing Routes
 app.use('/tasks', tasks);
+// Chat Routes
+app.use('/chat', chat);
 
 // Index Route
 app.get('/', (req, res) => {
